@@ -1,11 +1,11 @@
 # Site settings
 author: Terry Ollila
-title: 
+title: Stat Smashing with Terry
 header-img: img/home-bg.png
 email: terryollila@gmail.com
 copyright_name: Terry Ollila
 description: > # this means to ignore newlines until "baseurl:"
-  
+  A blog about data science, analysis, and maybe some programming.
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  terryollila
