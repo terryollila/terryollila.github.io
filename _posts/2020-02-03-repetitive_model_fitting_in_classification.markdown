@@ -63,7 +63,6 @@ Once again, I ran a train-test and undersampled, which I won't repeat here. Then
 apple_tree = classifier(\**params)
     apple_tree.fit(Xt_resampled, yt_resampled)
 ```
-		
 Those 'params' its bringing in are straight from the grid search. Because I've broken this up into two functions, those parameters can be toyed with in between, if one didn't want to feed them straight into the classifier. Maybe you have a reason to change the gamma on that SVC, who am I to judge?
 
 The typical prediction stuff comes after that, but there are some idiosyncrasies. For example, not everybody has a decision function. That's where this comes in:
@@ -86,7 +85,6 @@ plot_confusion_matrix(so_confused, figsize=(7,7), colorbar=True,
     plt.title('Identification of Depression/Anxiety')
     plt.show();
 		```
-		
 It comes out looking like so:
 	
 ![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_95_1.png)
@@ -112,8 +110,7 @@ if classifier == DecisionTreeClassifier:
 				
         Image(graph.create_png()) 
         return Image(graph.create_png()) 
-				```
-				
+				```			
 Recognize the code? It's the one that comes out looking like a pretty, pretty picture of a tree you could almost imagine seeing at the park:
 
 ![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_84_4.png)
