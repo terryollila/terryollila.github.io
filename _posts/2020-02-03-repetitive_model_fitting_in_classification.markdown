@@ -75,7 +75,6 @@ try:
     except:
         roc_auc = roc_auc_score(y_test, y_test_pred)
 				```
-				
 As mentioned previously, I want them all to have some cool graphics I don't have to fuss with. The first one I used was a confusion matrix. The one I used was from the mlextend library:
 	
 ```
