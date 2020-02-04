@@ -94,7 +94,6 @@ And it comes out like that for *every single model* I create, with every single 
 You get the picture. There is a block of code that conditionally allows random forest generators and decision trees to create feature importances, since the others can't do that. Those get returned at the end, if they exist.
 
 Finally, my favorite, which is unique to the decision tree classifier:
-
 ```
 if classifier == DecisionTreeClassifier:
         dot_data = export_graphviz(apple_tree, out_file=None, 
