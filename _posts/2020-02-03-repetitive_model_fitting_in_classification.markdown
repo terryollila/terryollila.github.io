@@ -80,7 +80,7 @@ The typical prediction stuff comes after that, but there are some idiosyncrasies
 		
 It comes out looking like so:
 	
-	![](https://github.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/blob/master/output_95_1.png)
+	![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_95_1.png)
 	
 	
 	I have a thing for green.
@@ -106,7 +106,7 @@ if classifier == DecisionTreeClassifier:
 				
 Recognize the code? It's the one that comes out looking like a pretty, pretty picture of a tree you could almost imagine seeing at the park:
 
-![](https://github.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/blob/master/output_84_4.png)
+![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_84_4.png)
 
 Love it as much as I do?
 
