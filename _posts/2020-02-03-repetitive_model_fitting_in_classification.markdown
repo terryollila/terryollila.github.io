@@ -20,11 +20,12 @@ There are multiple pieces involved when creating a model, but with some care, th
 
 In the grid search function, starting off  is some train-test sample splitting.
 
-`X_train, X_test, y_train, y_test = train_test_split(data, 
+```
+X_train, X_test, y_train, y_test = train_test_split(data, 
                                                     target,
                                                     random_state=42,
-                                                    test_size=.25)`
-																										
+                                                    test_size=.25)
+```																										
 Probaby pretty familiar to you, right?
 
 Next was some undersampling which wouldn't necessarily be used for everyone's data, so I'll skim past that.
@@ -39,16 +40,13 @@ if clf == SVC or clf == KNeighborsClassifier or clf == DecisionTreeClassifier:
     else:
         mod = clf(n_estimators=n_estimators)
 ```
-				
 And, of course, the grid search itself:
-
 ```
 grid_search = GridSearchCV(mod, cv=5, param_grid=params,
                                return_train_score=True, verbose=verbose,
                                scoring=scoring)
  grid_search.fit(Xt_resampled, yt_resampled)
  ```
-
 Note that my variables are Xt_resampled and yt_resampled because that's what I got out of my under-sampling. You'd probably have something different.
 
 Next I printed up some scores; typical stuff. The function returned this:
@@ -74,7 +72,7 @@ try:
         roc_auc = auc(fpr, tpr)
     except:
         roc_auc = roc_auc_score(y_test, y_test_pred)
-				```
+```
 As mentioned previously, I want them all to have some cool graphics I don't have to fuss with. The first one I used was a confusion matrix. The one I used was from the mlextend library:
 	
 ```
@@ -109,7 +107,7 @@ if classifier == DecisionTreeClassifier:
 				
         Image(graph.create_png()) 
         return Image(graph.create_png()) 
-				```			
+```			
 Recognize the code? It's the one that comes out looking like a pretty, pretty picture of a tree you could almost imagine seeing at the park:
 
 ![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_84_4.png)
