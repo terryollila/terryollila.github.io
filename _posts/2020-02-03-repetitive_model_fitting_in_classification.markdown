@@ -74,14 +74,13 @@ try:
         roc_auc = roc_auc_score(y_test, y_test_pred)
 ```
 As mentioned previously, I want them all to have some cool graphics I don't have to fuss with. The first one I used was a confusion matrix. The one I used was from the mlextend library:
-	
 ```
 plot_confusion_matrix(so_confused, figsize=(7,7), colorbar=True,
                           show_normed=True, cmap=plt.cm.Greens)
     plt.tick_params(labelsize=20)
     plt.title('Identification of Depression/Anxiety')
     plt.show();
-		```
+```
 It comes out looking like so:
 	
 ![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_95_1.png)
