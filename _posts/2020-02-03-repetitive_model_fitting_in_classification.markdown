@@ -31,7 +31,8 @@ Next was some undersampling which wouldn't necessarily be used for everyone's da
 
 Then comes the classifier... or does it? Some classifiers use an n_estimators parameter, and some don't. So I'll account for that in what's probably a clumsy fashion but, hey, I'm a student here, and it's simple and it works.
 
-`mod = None
+```
+mod = None
 
 if clf == SVC or clf == KNeighborsClassifier or clf == DecisionTreeClassifier:
         mod = clf()
@@ -44,7 +45,8 @@ And, of course, the grid search itself:
 `grid_search = GridSearchCV(mod, cv=5, param_grid=params,
                                return_train_score=True, verbose=verbose,
                                scoring=scoring)
-    grid_search.fit(Xt_resampled, yt_resampled)`
+ grid_search.fit(Xt_resampled, yt_resampled)
+	```
 
 Note that my variables are Xt_resampled and yt_resampled because that's what I got out of my under-sampling. You'd probably have something different.
 
@@ -56,27 +58,33 @@ This generated a variable I could use to feed into my next function: the classif
 
 Once again, I ran a train-test and undersampled, which I won't repeat here. Then we build the classification model. Basic stuff:
 
-`apple_tree = classifier(\**params)
-    apple_tree.fit(Xt_resampled, yt_resampled)`
+```
+apple_tree = classifier(\**params)
+    apple_tree.fit(Xt_resampled, yt_resampled)
+		```
 		
 Those 'params' its bringing in are straight from the grid search. Because I've broken this up into two functions, those parameters can be toyed with in between, if one didn't want to feed them straight into the classifier. Maybe you have a reason to change the gamma on that SVC, who am I to judge?
 
 The typical prediction stuff comes after that, but there are some idiosyncrasies. For example, not everybody has a decision function. That's where this comes in:
 
-`try:
+```
+try:
         y_score = apple_tree.decision_function(X_test)
         fpr, tpr, thresholds = roc_curve(y_test, y_score)
         roc_auc = auc(fpr, tpr)
     except:
-        roc_auc = roc_auc_score(y_test, y_test_pred)`
+        roc_auc = roc_auc_score(y_test, y_test_pred)
+				```
 				
 	As mentioned previously, I want them all to have some cool graphics I don't have to fuss with. The first one I used was a confusion matrix. The one I used was from the mlextend library:
 	
-`plot_confusion_matrix(so_confused, figsize=(7,7), colorbar=True,
+```
+plot_confusion_matrix(so_confused, figsize=(7,7), colorbar=True,
                           show_normed=True, cmap=plt.cm.Greens)
     plt.tick_params(labelsize=20)
     plt.title('Identification of Depression/Anxiety')
-    plt.show();`
+    plt.show();
+		```
 		
 It comes out looking like so:
 	
@@ -91,7 +99,7 @@ You get the picture. There is a block of code that conditionally allows random f
 
 Finally, my favorite, which is unique to the decision tree classifier:
 
-`
+```
 if classifier == DecisionTreeClassifier:
         dot_data = export_graphviz(apple_tree, out_file=None, 
                                    feature_names=data.columns, 
@@ -102,7 +110,8 @@ if classifier == DecisionTreeClassifier:
         graph = graph_from_dot_data(dot_data)  
 				
         Image(graph.create_png()) 
-        return Image(graph.create_png()) `
+        return Image(graph.create_png()) 
+				```
 				
 Recognize the code? It's the one that comes out looking like a pretty, pretty picture of a tree you could almost imagine seeing at the park:
 
