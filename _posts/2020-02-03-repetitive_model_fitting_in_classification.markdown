@@ -31,12 +31,12 @@ Next was some undersampling which wouldn't necessarily be used for everyone's da
 
 Then comes the classifier... or does it? Some classifiers use an n_estimators parameter, and some don't. So I'll account for that in what's probably a clumsy fashion but, hey, I'm a student here, and it's simple and it works.
 
-'mod = None
+`mod = None
 
 if clf == SVC or clf == KNeighborsClassifier or clf == DecisionTreeClassifier:
         mod = clf()
     else:
-        mod = clf(n_estimators=n_estimators)'
+        mod = clf(n_estimators=n_estimators)`
 				
 				
 And, of course, the grid search itself:
@@ -50,7 +50,7 @@ Note that my variables are Xt_resampled and yt_resampled because that's what I g
 
 Next I printed up some scores; typical stuff. The function returned this:
 
-'return grid_search.best_params_'
+`return grid_search.best_params_`
 
 This generated a variable I could use to feed into my next function: the classifier itself.
 
@@ -78,12 +78,12 @@ The typical prediction stuff comes after that, but there are some idiosyncrasies
     plt.title('Identification of Depression/Anxiety')
     plt.show();`
 		
-	It comes out looking like so:
+It comes out looking like so:
 	
 	![](https://github.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/blob/master/output_95_1.png)
 	
 	
-I have a thing for green.
+	I have a thing for green.
 
 And it comes out like that for *every single model* I create, with every single classifier. The confusion matrix is my favorite means of assessing my models, so it's great to have it pop out with no fuss without any extra effort.
 
@@ -91,7 +91,8 @@ You get the picture. There is a block of code that conditionally allows random f
 
 Finally, my favorite, which is unique to the decision tree classifier:
 
-`if classifier == DecisionTreeClassifier:
+`
+if classifier == DecisionTreeClassifier:
         dot_data = export_graphviz(apple_tree, out_file=None, 
                                    feature_names=data.columns, 
                                    class_names=np.unique(target).astype('str'), 
