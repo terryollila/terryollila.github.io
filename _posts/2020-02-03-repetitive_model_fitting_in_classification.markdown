@@ -62,7 +62,7 @@ Once again, I ran a train-test and undersampled, which I won't repeat here. Then
 ```
 apple_tree = classifier(\**params)
     apple_tree.fit(Xt_resampled, yt_resampled)
-		```
+```
 		
 Those 'params' its bringing in are straight from the grid search. Because I've broken this up into two functions, those parameters can be toyed with in between, if one didn't want to feed them straight into the classifier. Maybe you have a reason to change the gamma on that SVC, who am I to judge?
 
