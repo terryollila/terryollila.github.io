@@ -37,16 +37,18 @@ mod = None
 if clf == SVC or clf == KNeighborsClassifier or clf == DecisionTreeClassifier:
         mod = clf()
     else:
-        mod = clf(n_estimators=n_estimators)`
+        mod = clf(n_estimators=n_estimators)
+				```
 				
 				
 And, of course, the grid search itself:
 
-`grid_search = GridSearchCV(mod, cv=5, param_grid=params,
+```
+grid_search = GridSearchCV(mod, cv=5, param_grid=params,
                                return_train_score=True, verbose=verbose,
                                scoring=scoring)
  grid_search.fit(Xt_resampled, yt_resampled)
-	```
+ ```
 
 Note that my variables are Xt_resampled and yt_resampled because that's what I got out of my under-sampling. You'd probably have something different.
 
@@ -76,7 +78,7 @@ try:
         roc_auc = roc_auc_score(y_test, y_test_pred)
 				```
 				
-	As mentioned previously, I want them all to have some cool graphics I don't have to fuss with. The first one I used was a confusion matrix. The one I used was from the mlextend library:
+As mentioned previously, I want them all to have some cool graphics I don't have to fuss with. The first one I used was a confusion matrix. The one I used was from the mlextend library:
 	
 ```
 plot_confusion_matrix(so_confused, figsize=(7,7), colorbar=True,
@@ -88,10 +90,10 @@ plot_confusion_matrix(so_confused, figsize=(7,7), colorbar=True,
 		
 It comes out looking like so:
 	
-	![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_95_1.png)
+![](https://raw.githubusercontent.com/terryollila/dsc-mod-5-project-online-ds-ft-100719/master/output_95_1.png)
 	
 	
-	I have a thing for green.
+I have a thing for green.
 
 And it comes out like that for *every single model* I create, with every single classifier. The confusion matrix is my favorite means of assessing my models, so it's great to have it pop out with no fuss without any extra effort.
 
