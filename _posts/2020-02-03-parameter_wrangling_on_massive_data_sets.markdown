@@ -26,7 +26,7 @@ If you haven't done a drid search for ARIMA modeling, it's got a lot of stuff li
     p = range(0,p_max)
     d = range(0,d_max)
     q = range(0,q_max)
-		```		
+```		
 and:
 
 `pdq = list(itertools.product(p, d, q))`
