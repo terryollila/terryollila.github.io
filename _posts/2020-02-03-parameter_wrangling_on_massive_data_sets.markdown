@@ -36,15 +36,17 @@ and a little bit of:
 ```
             temp_df = pd.DataFrame(data = df_data, columns = columns)
             ans_df = pd.concat([ans_df, temp_df])
-						```
+```
 with some:
 ```
     ans_df = ans_df.sort_values('AIC', ascending = True)
     ans.sort(key = lambda x: x[1], reverse = False)
-		```
+```
 and some:
 
-`return ans, ans_df, rejects`
+```
+return ans, ans_df, rejects
+```
 
 to bring it on home. I left out the modeling because if you didn't know that, you probably wouldn't be here, and my fingers are tired.
 
