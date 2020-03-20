@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "From Words to Pictures"
-date:       2020-03-17 03:15:00 +0000
+date:       2020-03-16 23:15:02 -0400
 permalink:  from_words_to_pictures
 ---
 
@@ -13,20 +13,20 @@ I recently coded a project attempting to discern scripts from highly rated movie
 
 Word clouds might be a little bit cliche these days, but in the right context they can be an effective way to visualize the importance of text in two dimensions: not just a selection of important words, but a relative sizing of how prominent those words are in the source text. In determining good scripts from bad, this was an obvious choice, as I could easily show, side by side, the good and the bad. I made these clouds mutually exclusive, so that we only saw the bad-script words that didn't appear in good scripts, and vice versa. Using the wordcloud python library made everything easy, as I was able to insert a mask (from http://www.clker.com/) straight into the code to make images for the finished product:
 
-![thumbs up/down word cloud](https://raw.githubusercontent.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/master/flatirons_capstone_2/images/two_thumbs-md.png)
+![thumbs up/down word cloud](https://github.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/blob/master/images/two_thumbs-md.png?raw=true)
 
 
 Credit to James Irving of Flatiron  School for the inspiration!
 
 Naturally, that's not all there is. With the same sort of idea, a good bar chart can still do the job. This one is multi-faceted. On the dashboard, it toggles between three sets of data: Overall word importance in generating a predictive machine learning model, top correlation with good-script words, and top correlation with bad-script words. Here are the three of them side by side:
 
-![important features](https://raw.githubusercontent.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/master/flatirons_capstone_2/images/all_words.png)
+![important features](https://github.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/blob/master/images/all_words.png?raw=true)
 
 Pardon the obscenity.
 
 And then there's this fella. Plotly and dash have great functionality for generating easy dropdown graphics, so I put that to use with some distribution plots. I started with histograms, but these were much more interpretable and, well, better looking. 
 
-![word feature distribution plots](https://raw.githubusercontent.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/master/flatirons_capstone_2/images/dist_example.png)
+![word feature distribution plots](https://github.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/blob/master/images/dist_example.png?raw=true)
 
 That graph has 22 different dropdown items, including high-level attributes such as sentence length and unique words, to sentiment analysis, and down to the various parts of speech like nouns and interjections.
 
@@ -110,11 +110,15 @@ To get my best results, I used two models in sequence: first a support vector ma
 
 Here's the confusion matrix with all the detail of TPR and FPR etc., if you're into that sort of thing (like I am).
 
-![confusion matrix](https://raw.githubusercontent.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/master/flatirons_capstone_2/images/conf_matrix.png)
+![confusion matrix](https://github.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/blob/master/images/conf_matrix.png?raw=true)
 
 The entire thing is called What's a Writer Worth: Screenplay Science and the Value of a Few Good Words, and can be found here:
 
-[What's a Writer Worth](https://github.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719/tree/master/flatirons_capstone_2)
+[What's a Writer Worth](https://github.com/terryollila/dsc-capstone-project-v2-online-ds-ft-100719)
+
+And I've built an interactive dashboard for it here:
+
+[Screenplay Science Dashboard](https://lit-hollows-89977.herokuapp.com/)
 
 Thanks for reading!
 
